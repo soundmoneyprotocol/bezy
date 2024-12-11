@@ -1,0 +1,10 @@
+.openzeppelin/
+artifacts/
+build/
+cache/
+deployments/
+export/
+hardhat-dependency-compiler/
+typechain/
+docgen-templates/
+export.json
