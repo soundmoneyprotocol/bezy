@@ -6,5 +6,5 @@ import "@thesis/solidity-contracts/contracts/token/ERC20WithPermit.sol";
 import "@thesis/solidity-contracts/contracts/token/MisfundRecovery.sol";
 
 contract BEZY is T, ERC20WithPermit, MisfundRecovery {
-    constructor() ERC20WithPermit("t", "T") {}
+    constructor() ERC20WithPermit("bzy", "BZY") {}
 }
