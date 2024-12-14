@@ -9,6 +9,6 @@ contract BEZY is T, ERC20WithPermit, MisfundRecovery {
     constructor() ERC20WithPermit("bzy", "BZY") {
         _mint(msg.sender, initialSupply);
        // add totalSupply here
-        _totalSupply(uint256 250000000000000000000000000000);
+        _totalSupply(uint256 250000000000000000000000000);
     }
 }
