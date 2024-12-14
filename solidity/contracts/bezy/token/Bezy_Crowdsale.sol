@@ -5,7 +5,7 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/crowdsale/Crowdsale.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/crowdsale/emission/MintedCrowdsale.sol";
 
-contract BezyCrowdsale is Initializable, Crowdsale, MintedCrowdsale {
+contract BezyCrowdsale is Initializable, Crowdsale, MintedCrowdsale, AllowanceCrowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
 
     constructor(
         uint256 rate,            // rate, in TKNbits
@@ -13,7 +13,9 @@ contract BezyCrowdsale is Initializable, Crowdsale, MintedCrowdsale {
         IERC20 token,            // the token
         uint256 openingTime,     // opening time in unix epoch seconds
         uint256 closingTime      // closing time in unix epoch seconds
+        address tokenWallet  // <- new argument
     )
+        AllowanceCrowdsale(tokenWallet)  // <- used here
         PostDeliveryCrowdsale()
         TimedCrowdsale(openingTime, closingTime)
         Crowdsale(rate, wallet, token)
