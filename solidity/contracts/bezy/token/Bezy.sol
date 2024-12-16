@@ -9,7 +9,7 @@ contract BEZY is T, ERC20WithPermit, MisfundRecovery, Initializable, ERC20, ERC2
     constructor() ERC20WithPermit("bzy", "BZY") {
         _mint(msg.sender, initialSupply);
        // add totalSupply here
-        _totalSupply(uint256 250000000000000000000000000);
+        _totalSupply(uint256 250000000000000000000000000000);
     }
 function initialize(address minter) public initializer {
         ERC20Detailed.initialize("Bezy", "BZY", 18);
